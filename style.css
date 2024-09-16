@@ -1,3 +1,9 @@
+/* @font-face{
+    font-family: ;
+    src:url()
+} */
+
+
 *{
     margin: 0;
     padding: 0;
@@ -16,6 +22,17 @@ html,body{
     z-index: 999;
     background-color: #0B0B0B;
     padding: 25vh 10vw;
+}
+#crsr{
+    height: 2.3vw;
+    width: 2.3vw;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #c4b0b0;
+    position: fixed;
+    z-index: 999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
 }
 .line{
     height: fit-content;
@@ -59,36 +76,33 @@ html,body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-@keyframes anime{
-    0%{
+@keyframes anime {
+    0% {
         font-family: "plain light";
-        -webkit-text-stroke: 1px solid #fff;
+        -webkit-text-stroke: 1px #fff;
         color: #fff;
         font-weight: 500;
         opacity: 1;
+        transform: translateY(0);
     }
-    48%{
-        font-family: "plain light";
-        -webkit-text-stroke: 1px solid #fff;
-        color: #fff;
-        font-weight: 500;
+    40% {
         opacity: 0;
+        transform: translateY(-10px);
     }
-    50%{
-        font-family: 'sil serif';
-        -webkit-text-stroke: 1px solid #fff;
+    50% {
+        font-family: 'silk serif';
+        -webkit-text-stroke: 1px #fff;
         color: transparent;
         font-weight: 500;
         opacity: 1;
+        transform: translateY(0);
     }
-    100%{
-        font-family: 'sil serif';
-        -webkit-text-stroke: 1px solid #fff;
-        color: transparent;
-        font-weight: 500;
+    100% {
         opacity: 0;
+        transform: translateY(-10px);
     }
 }
+
 #main{
     position: relative;
     background-color: #003;
@@ -97,4 +111,53 @@ html,body{
     height: 100vh;
     width: 100%;
     background-color: #333030;
+}
+#page1 #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.3vw 4.5vw;
+}
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+#nav-part2 h4{
+    font-size: 0.8vw;
+    font-weight: 500;
+
+}
+.hero{
+    /* background-color: red; */
+    width: 72%;
+    margin-left: 27%;
+    height: fit-content;
+    /* background-color: red; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+.hero:nth-child(2){
+    margin-top: 18vh;
+}
+.hero h1{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    line-height: 7.2vw;
+    
+}
+.hero h2, .hero h3{
+    font-size: 7.2vw;
+    text-transform: uppercase;
+    line-height: 7.2;
+
+}
+.hero h2:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+    font-weight: 500;
 }
